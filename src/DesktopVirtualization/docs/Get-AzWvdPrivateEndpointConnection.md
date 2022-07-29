@@ -1,41 +1,75 @@
 ---
 external help file:
 Module Name: Az.DesktopVirtualization
-online version: https://docs.microsoft.com/powershell/module/az.desktopvirtualization/remove-azwvdsessionhost
+online version: https://docs.microsoft.com/powershell/module/az.desktopvirtualization/get-azwvdprivateendpointconnection
 schema: 2.0.0
 ---
 
-# Remove-AzWvdSessionHost
+# Get-AzWvdPrivateEndpointConnection
 
 ## SYNOPSIS
-Remove a SessionHost.
+Get a private endpoint connection.
 
 ## SYNTAX
 
-### Delete (Default)
+### List (Default)
 ```
-Remove-AzWvdSessionHost -HostPoolName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-Force] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf]
+Get-AzWvdPrivateEndpointConnection -HostPoolName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-AzWvdPrivateEndpointConnection -HostPoolName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get1
+```
+Get-AzWvdPrivateEndpointConnection -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzWvdPrivateEndpointConnection -InputObject <IDesktopVirtualizationIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### GetViaIdentity1
 ```
-Remove-AzWvdSessionHost -InputObject <IDesktopVirtualizationIdentity> [-Force] [-DefaultProfile <PSObject>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzWvdPrivateEndpointConnection -InputObject <IDesktopVirtualizationIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
+```
+
+### List1
+```
+Get-AzWvdPrivateEndpointConnection -ResourceGroupName <String> -WorkspaceName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Remove a SessionHost.
+Get a private endpoint connection.
 
 ## EXAMPLES
 
-### Example 1: Delete a Windows Virtual Desktop SessionHost by name
+### Example 1: {{ Add title here }}
 ```powershell
-Remove-AzWvdSessionHost -ResourceGroupName ResourceGroupName -HostPoolName HostPoolName -Name SessionHostName
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
 
-This command deletes a Windows Virtual Desktop SessionHost in a Host Pool.
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
@@ -54,27 +88,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Force flag to force sessionHost deletion even when userSession exists.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -HostPoolName
 The name of the host pool within the specified resource group
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -90,7 +109,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.IDesktopVirtualizationIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -101,29 +120,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the session host within the specified host pool
+The name of the private endpoint connection associated with the Azure resource
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: SessionHostName
+Parameter Sets: Get, Get1
+Aliases: PrivateEndpointConnectionName
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -136,7 +140,7 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Get, Get1, List, List1
 Aliases:
 
 Required: True
@@ -150,8 +154,8 @@ Accept wildcard characters: False
 The ID of the target subscription.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
+Type: System.String[]
+Parameter Sets: Get, Get1, List, List1
 Aliases:
 
 Required: False
@@ -161,31 +165,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -WorkspaceName
+The name of the workspace
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
+Type: System.String
+Parameter Sets: Get1, List1
+Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -201,7 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20210401Preview.IPrivateEndpointConnectionWithSystemData
 
 ## NOTES
 
