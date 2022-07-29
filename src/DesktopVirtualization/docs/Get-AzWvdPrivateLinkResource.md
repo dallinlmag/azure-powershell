@@ -132,7 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api10.IPrivateLinkResource
+### Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20220401Preview.IPrivateLinkResource
 
 ## NOTES
 

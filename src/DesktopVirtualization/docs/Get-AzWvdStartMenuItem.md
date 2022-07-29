@@ -108,7 +108,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20210401Preview.IStartMenuItem
+### Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20220401Preview.IStartMenuItem
 
 ## NOTES
 

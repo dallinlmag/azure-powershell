@@ -1,40 +1,52 @@
 ---
 external help file:
 Module Name: Az.DesktopVirtualization
-online version: https://docs.microsoft.com/powershell/module/az.desktopvirtualization/remove-azwvdapplication
+online version: https://docs.microsoft.com/powershell/module/az.desktopvirtualization/remove-azwvdscalingplanpooledschedule
 schema: 2.0.0
 ---
 
-# Remove-AzWvdApplication
+# Remove-AzWvdScalingPlanPooledSchedule
 
 ## SYNOPSIS
-Remove an application.
+Remove a ScalingPlanPooledSchedule.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-AzWvdApplication -GroupName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzWvdScalingPlanPooledSchedule -ResourceGroupName <String> -ScalingPlanName <String>
+ -ScalingPlanScheduleName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-AzWvdApplication -InputObject <IDesktopVirtualizationIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzWvdScalingPlanPooledSchedule -InputObject <IDesktopVirtualizationIdentity>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Remove an application.
+Remove a ScalingPlanPooledSchedule.
 
 ## EXAMPLES
 
-### Example 1: Delete a Windows Virtual Desktop Application by name
+### Example 1: {{ Add title here }}
 ```powershell
-Remove-AzWvdApplication -ResourceGroupName ResourceGroupName -ApplicationGroupName ApplicationGroupName -Name ApplicationName
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
 
-This command deletes a Windows Virtual Desktop Application in an applicaton Group.
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
@@ -47,21 +59,6 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupName
-The name of the application group
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases: ApplicationGroupName
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -84,21 +81,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-The name of the application within the specified application group
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases: ApplicationName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -117,6 +99,36 @@ Accept wildcard characters: False
 ### -ResourceGroupName
 The name of the resource group.
 The name is case insensitive.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScalingPlanName
+The name of the scaling plan.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScalingPlanScheduleName
+The name of the ScalingPlanSchedule
 
 ```yaml
 Type: System.String

@@ -1,40 +1,58 @@
 ---
 external help file:
 Module Name: Az.DesktopVirtualization
-online version: https://docs.microsoft.com/powershell/module/az.desktopvirtualization/remove-azwvdapplication
+online version: https://docs.microsoft.com/powershell/module/az.desktopvirtualization/get-azwvdscalingplanpooledschedule
 schema: 2.0.0
 ---
 
-# Remove-AzWvdApplication
+# Get-AzWvdScalingPlanPooledSchedule
 
 ## SYNOPSIS
-Remove an application.
+Get a ScalingPlanPooledSchedule.
 
 ## SYNTAX
 
-### Delete (Default)
+### List (Default)
 ```
-Remove-AzWvdApplication -GroupName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzWvdScalingPlanPooledSchedule -ResourceGroupName <String> -ScalingPlanName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Get
 ```
-Remove-AzWvdApplication -InputObject <IDesktopVirtualizationIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzWvdScalingPlanPooledSchedule -ResourceGroupName <String> -ScalingPlanName <String>
+ -ScalingPlanScheduleName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzWvdScalingPlanPooledSchedule -InputObject <IDesktopVirtualizationIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Remove an application.
+Get a ScalingPlanPooledSchedule.
 
 ## EXAMPLES
 
-### Example 1: Delete a Windows Virtual Desktop Application by name
+### Example 1: {{ Add title here }}
 ```powershell
-Remove-AzWvdApplication -ResourceGroupName ResourceGroupName -ApplicationGroupName ApplicationGroupName -Name ApplicationName
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
 
-This command deletes a Windows Virtual Desktop Application in an applicaton Group.
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,28 +71,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -GroupName
-The name of the application group
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases: ApplicationGroupName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.IDesktopVirtualizationIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -84,13 +87,14 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-The name of the application within the specified application group
+### -ResourceGroupName
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: ApplicationName
+Parameter Sets: Get, List
+Aliases:
 
 Required: True
 Position: Named
@@ -99,28 +103,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -ScalingPlanName
+The name of the scaling plan.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+### -ScalingPlanScheduleName
+The name of the ScalingPlanSchedule
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -134,44 +137,13 @@ Accept wildcard characters: False
 The ID of the target subscription.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -185,7 +157,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20220401Preview.IScalingPlanPooledSchedule
 
 ## NOTES
 
